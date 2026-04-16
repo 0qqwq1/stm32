@@ -1,5 +1,4 @@
 #include "stm32f10x.h"                  // Device header
-#include "PWM.h"
 
 void IC_Init(void)
 {    
@@ -57,7 +56,7 @@ uint32_t IC_GetFreq(void)
   * @param  无
   * @retval TIM3中的CCR值
   */
-uint8_t IC_GetCapture1(void)
+uint16_t IC_GetCapture1(void)
 {
-    TIM_GetCapture1(TIM3);
+    return TIM_GetCapture1(TIM3);
 }

@@ -3,6 +3,6 @@
 
 void IC_Init(void);
 uint32_t IC_GetFreq(void);
-uint8_t IC_GetCapture1(void);
+uint16_t IC_GetCapture1(void);
 
 #endif
