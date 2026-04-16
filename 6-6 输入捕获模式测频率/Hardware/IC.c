@@ -41,11 +41,22 @@ void IC_Init(void)
     TIM_Cmd(TIM3, ENABLE);
 }
 
+/**
+  * @brief  TIM2输出方波频率获取
+  * @param  无
+  * @retval TIM2输出方波的频率
+  *     由TIM3_CH1输入捕获的CCR值根据对应公式求出，这里CCR理论上与TIM2对应通道的ARR值相等
+  */
 uint32_t IC_GetFreq(void)
 {
     return 1000000 / (TIM_GetCapture1(TIM3) + 1);               //Freq = 72M / (PSC + 1) / (ARR + 1) 这里的+1是为了凑整
 }
 
+/**
+  * @brief  TIM3中的CCR值检测
+  * @param  无
+  * @retval TIM3中的CCR值
+  */
 uint8_t IC_GetCapture1(void)
 {
     TIM_GetCapture1(TIM3);
