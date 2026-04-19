@@ -4,7 +4,7 @@
   * @author  RAIN
   * @version V1.0
   * @date    2026/4/5
-  * @brief   按键点灯
+  * @brief   编码器接口测速
   ******************************************************************************
   * @attention
   *
@@ -22,6 +22,7 @@ int32_t Speed = 0;
 
 int main(void)
 {
+    /* 初始化 */
     OLED_Init();
     Timer_Init();
     Encoder_Init();
